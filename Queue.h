@@ -5,17 +5,25 @@ using namespace std;
 
 static int capacity;
 
-class Queue{
-    
+class Queue {
     private:
         int size;
-        vector<Group> arr;
-    
-
+        Node *front, *back;
+    public:
+        Queue() {
+            front = back = NULL;
+        }
+        void enqueue();
+        void dequeue();
 };
 
-class Group{
-    private:
-        string name;
-        int size;
+struct Node {
+    int size;
+    string name;
+    Node *next;
+
+    Node(int s, string n){
+        size = s;
+        name = n;
+    }
 };
