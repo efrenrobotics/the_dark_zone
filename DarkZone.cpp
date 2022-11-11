@@ -20,7 +20,8 @@ Queue *readInput(ifstream &capsuleInfo) {
     return queue;
 }
 
-void printCapsule(Stack *stack, int remainingSpace, int currentSize, int capsuleNum) {
+void printCapsule(Stack *stack, int remainingSpace, int currentSize,
+    int capsuleNum) {
     cout << "Capsule #" << capsuleNum << endl;
     while (!stack->isEmpty()) {
         Node *node = stack->pop();
@@ -35,7 +36,8 @@ void printStatistics(int totalGuests, int capsuleNum, int capacity) {
     cout << "Overall number of guests: " << totalGuests << endl;
     cout << "Overall number of capsules: " << capsuleNum << endl;
     cout << "Capsule capacity: " << capacity << endl;
-    double utilization = ((double) totalGuests / (capsuleNum * capacity)) * 100;
+    double utilization = ((double) totalGuests / (capsuleNum * capacity))
+                            * 100;
     cout << fixed << setprecision(1);
     cout << "Percentage Utilization: " << totalGuests << " / (" << capsuleNum;
     cout <<  " * " << capacity << ") = " << utilization << "%" << endl;
