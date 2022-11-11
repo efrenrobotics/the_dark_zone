@@ -1,9 +1,4 @@
-#include <vector>
-#include <string>
-
-using namespace std;
-
-static int capacity;
+#include "Node.h"
 
 class Queue {
     private:
@@ -11,19 +6,12 @@ class Queue {
         Node *front, *back;
     public:
         Queue() {
-            front = back = NULL;
+            front = NULL;
+            back = NULL;
+            size = 0;
         }
-        void enqueue();
-        void dequeue();
-};
 
-struct Node {
-    int size;
-    string name;
-    Node *next;
-
-    Node(int s, string n){
-        size = s;
-        name = n;
-    }
+        void enqueue(std::string name, int numPeople);
+        Node *dequeue();
+        bool isEmpty();
 };
